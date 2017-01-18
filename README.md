@@ -1,6 +1,7 @@
 # Repos-Health-Study
 
 Contributors: Dreizan Moore and Matthew Schuette
+
 Development Environment:
     Operating Systems: Macintosh and Windows
     Programming Languages: Python v. 2.7
