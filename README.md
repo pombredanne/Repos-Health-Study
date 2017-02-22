@@ -18,13 +18,15 @@ Operating Systems: Macintosh and Windows
     
 Programming Languages: Python 3.4.x
     
-Frameworks: 
+Frameworks: N/A
     
 Programming Environment: Terminal/Sublime Text/Notepad++
     
-Deployment Environment: 
-Windows Computer Specs: 64bit OS, i5-660k processor, 8GB ram
-Mac Computer Specs:
+Deployment Environment - 
+
+Windows Computer Specs: 64-bit OS, i5-660k processor, 8GB ram
+
+Mac Computer Specs: 64-bit macOS Sierra, 2.5 GHz Intel Core i5 processor, 16GB RAM
 
 # Repository Management: 
 When a contributor wishes to edit/add to the repository's code, contributors will fork the repository. Once code has been written, before committing, the contributors will meet to go over additions/changes. Then, pull and merge requests will be made.
