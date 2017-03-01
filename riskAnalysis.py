@@ -5,10 +5,9 @@ import sys, requests#, getopt
 def main():
    inZip = ''
    outAnalysis = ''
-   request = ''
 
-   print(sys.argv[1:])
-   request = requests.get(sys.argv[1:])
+   print(sys.argv[1])
+   request = requests.head(sys.argv[1])
    if (request.status_code == 200):
       print(" exists!\n")
    else:
