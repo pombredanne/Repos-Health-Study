@@ -32,7 +32,7 @@ Mac Computer Specs: 64-bit macOS Sierra, 2.5 GHz Intel Core i5 processor, 16GB R
 When a contributor wishes to edit/add to the repository's code, contributors will fork the repository. Once code has been written, before committing, the maintainers will meet to go over additions/changes. Then, pull and merge requests will be made.
 
 # DFD of Repos-Health-Study
-![alt tag](https://github.com/Dreizan/Repos-Health-Study/blob/dev/RepoHealthDFD.png?raw=true)
+![alt tag](https://github.com/Dreizan/Repos-Health-Study/blob/dev/RepoHealthDFD.PNG?raw=true)
 
 # Database Schema
 Potentially, data will be stored under a MySQL database server, which will contain all risk information collected on projects that have already been analysed. When the user would like to find out risk analysis information on a specific Github repository, this server will be checked first to see whether or not analysis on said repository exists already. If analysis already exists, it will pull the JSON information directly from the MySQL database. If not, the Python program will be run to analyze potential risks on the repository, send the resulting analysis to the user, and store the resulting JSON file into the database.
