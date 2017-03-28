@@ -1,6 +1,21 @@
 #!/usr/bin/python
 
-import sys, requests, zipfile
+import sys, requests, zipfile, os, json
+from pprint import pprint
+
+def checkLicensing(targetZip, zipDir):
+	# Gather zip name
+	zipName = targetZip[targetZip.rfind('/'):-4]
+
+	# Run Scancode to gather licensing information
+	os.system("./scancode-toolkit-1.6.0/scancode -f json -l -c " + zipDir + " > " + zipName + ".json")
+
+	# Read through JSON data
+	with open(zipName + '.json') as data_file:    
+    	data = json.load(data_file)
+
+	pprint(data)
+
 
 def checkURL():
    inZip = ''
@@ -25,9 +40,12 @@ def unzipFile(targetZip):
 
 	print("Wallah\n")
 
+	return(targetZip[:-1] + "/" + targetZip[targetZip.rfind('/'):-4])
+
 def main():
 	# checkURL()
-	unzipFile(sys.argv[1])
+	zipDir = unzipFile(sys.argv[1])
+	checkLicensing(sys.argv[1], zipDir)
 
 if __name__ == "__main__":
    main()
