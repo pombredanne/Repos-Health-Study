@@ -9,13 +9,21 @@ def checkLicensing(targetZip, zipDir):
 	zipName = targetZip[targetZip.rfind('/'):-4]
 
 	# Run Scancode to gather licensing information
-	os.system("./scancode-toolkit-1.6.0/scancode -f json -l -c " + zipDir + " > " + zipName + ".json")
+	os.system("./scancode-toolkit-1.6.0/scancode -f json -l -c " + zipDir + " > ./test/results/" + zipName + ".json")
 
 	# Read through JSON data
-	with open(zipName + '.json') as data_file:    
+	with open("./test/results/" + zipName + '.json') as data_file:    
     	data = json.load(data_file)
 
-	pprint(data)
+	# pprint(data)
+
+    if(len(data['results']['licenses']) > 0):
+    	print("There are licenses included!\nLicenses:")
+    	for item in data['results']['licenses']:
+    		print(" " + item['short_name'])
+
+    else:
+    	print("No licensing included.\n")
 
 # Function that checks if the passed repository URL exists
 def checkURL():
@@ -39,8 +47,6 @@ def unzipFile(targetZip):
 	theZip = zipfile.ZipFile(targetZip, 'r')
 	theZip.extractall(zipDirectory)
 	theZip.close()
-
-	print("Wallah\n")
 
 	return(targetZip[:-1] + "/" + targetZip[targetZip.rfind('/'):-4])
 
