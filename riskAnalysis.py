@@ -3,6 +3,7 @@
 import sys, requests, zipfile, os, json
 from pprint import pprint
 
+# Function which looks for licensing
 def checkLicensing(targetZip, zipDir):
 	# Gather zip name
 	zipName = targetZip[targetZip.rfind('/'):-4]
@@ -16,7 +17,7 @@ def checkLicensing(targetZip, zipDir):
 
 	pprint(data)
 
-
+# Function that checks if the passed repository URL exists
 def checkURL():
    inZip = ''
    outAnalysis = ''
@@ -29,6 +30,7 @@ def checkURL():
       print("The passed URL does not exist! Please try again!\n")
       sys.exit()
 
+# Function which extracts the contents of the zip file
 def unzipFile(targetZip):
 	# Directory where zip and corresponding unzipped file are located
 	zipDirectory = targetZip[:targetZip.rfind('/')]
@@ -42,6 +44,7 @@ def unzipFile(targetZip):
 
 	return(targetZip[:-1] + "/" + targetZip[targetZip.rfind('/'):-4])
 
+# Main
 def main():
 	# checkURL()
 	zipDir = unzipFile(sys.argv[1])
