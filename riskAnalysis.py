@@ -1,18 +1,33 @@
 #!/usr/bin/python
 
-import sys, requests#, getopt
+import sys, requests, zipfile
 
-def main():
+def checkURL():
    inZip = ''
    outAnalysis = ''
 
-   print(sys.argv[1])
    request = requests.head(sys.argv[1])
    if (request.status_code == 200):
-      print(" exists!\n")
+      print("URL exists!\n")
+      
    else:
-      print(" does not exist!\n")
+      print("The passed URL does not exist! Please try again!\n")
       sys.exit()
+
+def unzipFile(targetZip):
+	# Directory where zip and corresponding unzipped file are located
+	zipDirectory = targetZip[:targetZip.rfind('/')]
+	
+	# Extract contents of the zip file
+	theZip = zipfile.ZipFile(targetZip, 'r')
+	theZip.extractall(zipDirectory)
+	theZip.close()
+
+	print("Wallah\n")
+
+def main():
+	# checkURL()
+	unzipFile(sys.argv[1])
 
 if __name__ == "__main__":
    main()
