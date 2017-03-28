@@ -25,7 +25,7 @@ def checkLicensing(targetZip, zipDir):
     else:
     	print("No licensing included.\n")
 
-    # os.system("rm -rf " + zipDir)
+    # os.system("rm -rf " + zipDir + "/..")
 
 # Function that checks if the passed repository URL exists
 def checkURL():
