@@ -15,7 +15,7 @@ Step 1: Download this repository
 
 Either download and decompress the Repos-Health-Study .zip file from GitHub or in your Terminal session, run the following command:
 
-git clone https://github.com/Dreizan/Repos-Health-Study.git
+    $ git clone https://github.com/Dreizan/Repos-Health-Study.git
 
 Step 2: Download the scancode_toolkit Repository
 
