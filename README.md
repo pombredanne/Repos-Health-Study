@@ -24,8 +24,6 @@ Programming Environment: Terminal/Sublime Text/Notepad++
     
 Deployment Environment - 
 
-Windows Computer Specs: 64-bit OS, i5-660k processor, 8GB ram
-
 Mac Computer Specs: 64-bit macOS Sierra, 2.5 GHz Intel Core i5 processor, 16GB RAM
 
 Database: MySQL Database
