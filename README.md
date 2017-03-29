@@ -23,7 +23,11 @@ Download the scancode_toolkit Repository's .zip file (Link: https://github.com/n
 
 # Usage
 
+To run the program, run the following command:
 
+    $ python riskAnalysis.py <URL_of_GitHub_Repository>
+    
+* \<URL_of_GitHub_Repository\> - The URL of the main page for a GitHub repository (ex. For this repo, Repos-Health-Study, the URL would be "https://github.com/Dreizan/Repos-Health-Study".)
 
 # Copyright Declarations/Licensing Information
 Repos-Health-Study is free software: you can redistribute it and/or modify it under the terms of the MIT License as published by the Open Source Initiative. See the file LICENSE for more details.
@@ -58,3 +62,7 @@ When a contributor wishes to edit/add to the repository's code, contributors wil
 Potentially, data will be stored under a MySQL database server, which will contain all risk information collected on projects that have already been analysed. When the user would like to find out risk analysis information on a specific Github repository, this server will be checked first to see whether or not analysis on said repository exists already. If analysis already exists, it will pull the JSON information directly from the MySQL database. If not, the Python program will be run to analyze potential risks on the repository, send the resulting analysis to the user, and store the resulting JSON file into the database.
 
 For now, this task will potentially be returned to at a later date. Developing the analysis system will be of higher priority.
+
+# To-Do's
+
+
