@@ -14,17 +14,15 @@ All associated documentation is licensed under the terms of the Creative Commons
 Dreizan Moore and Matthew Schuette
 
 # Development Environment:
-Operating Systems: Macintosh and Windows
+Operating Systems: Macintosh
     
-Programming Languages: Python 3.4.x
+Programming Languages: Python 2.7.x
     
 Frameworks: N/A
     
 Programming Environment: Terminal/Sublime Text/Notepad++
     
 Deployment Environment - 
-
-Windows Computer Specs: 64-bit OS, i5-660k processor, 8GB ram
 
 Mac Computer Specs: 64-bit macOS Sierra, 2.5 GHz Intel Core i5 processor, 16GB RAM
 
