@@ -14,7 +14,7 @@ All associated documentation is licensed under the terms of the Creative Commons
 Dreizan Moore and Matthew Schuette
 
 # Development Environment:
-Operating Systems: Macintosh and Windows
+Operating Systems: Macintosh
     
 Programming Languages: Python 2.7.x
     
