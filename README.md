@@ -11,15 +11,15 @@ Python 2.7.x (Link to Python Language: https://www.python.org)
 
 # Installation Instructions
 
-Step 1: Download this repository
+**Step 1: Download this repository**
 
-Either download and decompress the Repos-Health-Study .zip file from GitHub or in your Terminal session, run the following command:
+Either download and decompress the Repos-Health-Study zip file (Download Link: https://github.com/Dreizan/Repos-Health-Study/archive/master.zip) from GitHub or in your Terminal session, run the following command:
 
     $ git clone https://github.com/Dreizan/Repos-Health-Study.git
 
-Step 2: Download the scancode_toolkit Repository
+**Step 2: Download the scancode_toolkit Repository**
 
-Download the scancode_toolkit Repository's .zip file (Link: https://github.com/nexB/scancode-toolkit/archive/develop.zip) and decompress the zip file inside your Repos-Health-Study directory.
+Download the scancode_toolkit Repository's zip file (Link: https://github.com/nexB/scancode-toolkit/archive/develop.zip) and decompress the zip file inside your Repos-Health-Study directory.
 
 # Usage
 
@@ -28,6 +28,10 @@ To run the program, run the following command:
     $ python riskAnalysis.py <URL_of_GitHub_Repository>
     
 * \<URL_of_GitHub_Repository\> - The URL of the main page for a GitHub repository (ex. For this repo, Repos-Health-Study, the URL would be "https://github.com/Dreizan/Repos-Health-Study".)
+
+    $ python riskAnalysis.py https://github.com/Dreizan/Repos-Health-Study
+    
+This will find the passed repository link's associated zip file (assuming the URL of the repository exists), download the file, and decompress it. Then, scancode_toolkit will be executed, creating a JSON file containing licensing and copyright information on every file contained in the ********
 
 # Copyright Declarations/Licensing Information
 Repos-Health-Study is free software: you can redistribute it and/or modify it under the terms of the MIT License as published by the Open Source Initiative. See the file LICENSE for more details.
