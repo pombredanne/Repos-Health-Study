@@ -5,6 +5,26 @@ Repos-Health-Study looks into analyzing potential risk factors on a Github repos
 
 When a user would like to analyze potential risks on a Github repository, our Python program will run. This program will gather the repository's associated .zip file and send it through doSOCSv2(https://github.com/DoSOCSv2/DoSOCSv2), a Github project that takes a look at managing SPDX 2.0 documents and data. doSOCSv2 will then gather licensing information and the CPE of a repo. This CPE is then fed into NIST's database which will then try to find any published vulnerabilites, if they exist. The results of all preceding activity will then be documented into a JSON script and gives said script back to the user.
 
+# System Requirements
+
+Python 2.7.x (Link to Python Language: https://www.python.org)
+
+# Installation Instructions
+
+Step 1: Download this repository
+
+Either download and decompress the Repos-Health-Study .zip file from GitHub or in your Terminal session, run the following command:
+
+git clone https://github.com/Dreizan/Repos-Health-Study.git
+
+Step 2: Download the scancode_toolkit Repository
+
+Download the scancode_toolkit Repository's .zip file (Link: https://github.com/nexB/scancode-toolkit/archive/develop.zip) and decompress the zip file inside your Repos-Health-Study directory.
+
+# Usage
+
+
+
 # Copyright Declarations/Licensing Information
 Repos-Health-Study is free software: you can redistribute it and/or modify it under the terms of the MIT License as published by the Open Source Initiative. See the file LICENSE for more details.
 
@@ -14,7 +34,7 @@ All associated documentation is licensed under the terms of the Creative Commons
 Dreizan Moore and Matthew Schuette
 
 # Development Environment:
-Operating Systems: Macintosh
+Operating Systems: macOS/OSX or Unix-based system
     
 Programming Languages: Python 2.7.x
     
@@ -22,11 +42,11 @@ Frameworks: N/A
     
 Programming Environment: Terminal/Sublime Text/Notepad++
     
-Deployment Environment - 
+Deployment Environment: (TBD)
 
 Mac Computer Specs: 64-bit macOS Sierra, 2.5 GHz Intel Core i5 processor, 16GB RAM
 
-Database: MySQL Database
+Database: TBD (possibly MySQL Database)
 
 # Repository Management: 
 When a contributor wishes to edit/add to the repository's code, contributors will fork the repository. Once code has been written, before committing, the maintainers will meet to go over additions/changes. Then, pull and merge requests will be made.
