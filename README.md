@@ -16,7 +16,7 @@ Dreizan Moore and Matthew Schuette
 # Development Environment:
 Operating Systems: Macintosh and Windows
     
-Programming Languages: Python 3.4.x
+Programming Languages: Python 2.7.x
     
 Frameworks: N/A
     
