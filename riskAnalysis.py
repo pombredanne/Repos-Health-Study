@@ -17,7 +17,7 @@ def checkLicensing(targetZip, zipDir):
 
 	# Read through JSON data
 	with open("./test/results" + zipName + '.json') as data_file:    
-    		data = json.load(data_file)
+    	data = json.load(data_file)
 
 	# pprint(data)
 
@@ -38,7 +38,8 @@ def checkLicensing(targetZip, zipDir):
 				print("There are copyrights included!\nCopyrights:")
 			hasCopyrights = 1
 			for cpy in item['copyrights']:
-   				print("* - \"" + cpy['statements'] + "\"")
+				for stmts in cpy['statements']:
+   					print("* - \"" + stmts + "\"")
 
 	if(hasCopyrights == 0):
    		print("No copyrights included.\n")
