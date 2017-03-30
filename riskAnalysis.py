@@ -79,16 +79,23 @@ def getZip(targetURL):
 	zipName = targetURL[targetURL.rfind('/')+1:]
 	print(zipName + ".zip")
 	os.system("curl -L " + targetURL + "/zipball > " + zipName + ".zip")
-	os.system("ls -l")
+	os.system("")
 	return(zipName + ".zip")
+
+#Function that takes user entered github URL and puts it into api.github.com/repos form of the repo
+def getApiUrl(targetURL):
+	urlPieces = targetURL.split('/') #Split on forward slash
+	apiUrl = "https://api.github.com/repos/" + urlPieces[3] + '/' + urlPieces[4]
+	return(apiUrl)
 
 # Main
 def main():
 	print("Checking if the URL passed exists:")
 	checkURL(sys.argv[1])
+	properURL = getApiUrl(sys.argv[1])
 
 	print("Gathering the zip file and decompressing it.")
-	zipF = getZip(sys.argv[1])
+	zipF = getZip(properURL)
 	zipDir = unzipFile(zipF)
 
 	print("Attemptiing to collect licensing and copyright information on the following GitHub project - " + zipDir + ":")
