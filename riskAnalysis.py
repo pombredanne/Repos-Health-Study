@@ -79,9 +79,8 @@ def getZip(targetURL):
 	zipName = targetURL[targetURL.rfind('/')+1:]
 	print(zipName + ".zip")
 	os.system("curl -L " + targetURL + "/zipball > " + zipName + ".zip")
+	os.system("ls -l")
 	return(zipName + ".zip")
-	#os.system("curl -L https://api.github.com/repos/Dreizan/Repos-Health-Study/zipball > Repos-Health-Study.zip")
-	#os.system("curl -L https://github.com/Dreizan/Repos-Health-Study/zipball > Repos-Health-Study.zip")
 
 # Main
 def main():
