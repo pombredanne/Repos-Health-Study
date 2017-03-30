@@ -1,0 +1,60 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.", 
+  "scancode_version": "1.6.0", 
+  "resource_count": 5, 
+  "results": [
+    {
+      "location": "Repos-Health-Study.zi/Dreizan-Repos-Health-Study-2c519cc", 
+      "copyrights": [], 
+      "licenses": []
+    }, 
+    {
+      "location": "Repos-Health-Study.zi/Dreizan-Repos-Health-Study-2c519cc/LICENSE", 
+      "copyrights": [
+        {
+          "statements": [
+            "Copyright (c) 2017 Dreizan Moore & Matthew Schuette"
+          ], 
+          "holders": [
+            "Dreizan Moore & Matthew Schuette", 
+            "Dreizan Moore"
+          ], 
+          "authors": [], 
+          "start_line": 3, 
+          "end_line": 3
+        }
+      ], 
+      "licenses": [
+        {
+          "key": "mit", 
+          "score": 100.0, 
+          "short_name": "MIT License", 
+          "category": "Attribution", 
+          "owner": "MIT", 
+          "homepage_url": "http://opensource.org/licenses/mit-license.php", 
+          "text_url": "http://opensource.org/licenses/mit-license.php", 
+          "dejacode_url": "https://enterprise.dejacode.com/license_library/Demo/mit/", 
+          "spdx_license_key": "MIT", 
+          "spdx_url": "http://spdx.org/licenses/MIT", 
+          "start_line": 5, 
+          "end_line": 21
+        }
+      ]
+    }, 
+    {
+      "location": "Repos-Health-Study.zi/Dreizan-Repos-Health-Study-2c519cc/README.md", 
+      "copyrights": [], 
+      "licenses": []
+    }, 
+    {
+      "location": "Repos-Health-Study.zi/Dreizan-Repos-Health-Study-2c519cc/RepoHealthDFD.PNG", 
+      "copyrights": [], 
+      "licenses": []
+    }, 
+    {
+      "location": "Repos-Health-Study.zi/Dreizan-Repos-Health-Study-2c519cc/riskAnalysis.py", 
+      "copyrights": [], 
+      "licenses": []
+    }
+  ]
+}

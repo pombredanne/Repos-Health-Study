@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys, requests, zipfile, os, json
-from pprint import pprint
 
 # Function which looks for licensing
 def checkLicensing(targetZip, zipDir):
@@ -19,8 +18,6 @@ def checkLicensing(targetZip, zipDir):
 	# Read through JSON data
 	with open("./test/results" + zipName + '.json') as data_file:    
     		data = json.load(data_file)
-
-	# pprint(data)
 
 	for item in data['results']:
 		if(len(item['licenses']) > 0):
