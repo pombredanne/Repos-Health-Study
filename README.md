@@ -79,3 +79,12 @@ Eventually, once the program has collected the analyzed target repository's JSON
 * Implementing MongoDB server as mentioned above
 * Have program store JSON licensing/copyright and CPE data into the MongoDB server
 
+# Use Case
+Title: Determine License and Copyright Information
+Primary Actor: User of an open source project
+Goal in Context: The user is able to determine license and copyright information from the provided project info
+Stakeholders:  OSS Health Community members: To receive clear license and copyright information
+Preconditions: Python 2.7.x, Download of the /Dreizan/Repos-Health-Study, Download of scan code tool, proper GitHub url has been provided
+Main Success Scenario: License and Copyright information is stored in a .json file and output to the console for the user
+Failed End Conditions: License and Copyright information is not provided, nothing is output to the console
+Trigger: Executing riskAnalysis.py
