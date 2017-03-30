@@ -1,7 +1,7 @@
 # Repos-Health-Study
 
 # System Description
-Repos-Health-Study looks into analyzing potential risk factors on a Github repository. Factors that this project examines include percentages of licensing/copyright information used throughout the repository and whether or not a project has a Common Platform Enumeration(CPE). On vulnerabilities specifically, the program will connect to the National Institute of Standards and Technology (NIST) (https://www.nist.gov) to identify whether or not a project has a published risk record(s) within NIST's database using a CPE on the repository. That CPE then may have associated Common Vulnerabilities and Exposures (CVE) with it.
+Repos-Health-Study looks into analyzing potential risk factors on a Github repository. The main factor that this project examines is any licensing/copyright information used throughout the target repository. On vulnerabilities specifically, the program will connect to the National Institute of Standards and Technology (NIST) (https://www.nist.gov) to identify whether or not a project has a published risk record(s) within NIST's database using a CPE on the repository. That CPE then may have associated Common Vulnerabilities and Exposures (CVE) with it.
 
 When a user would like to analyze potential risks on a Github repository, our Python program will run. This program will gather the repository's associated .zip file and send it through doSOCSv2(https://github.com/DoSOCSv2/DoSOCSv2), a Github project that takes a look at managing SPDX 2.0 documents and data. doSOCSv2 will then gather licensing information and the CPE of a repo. This CPE is then fed into NIST's database which will then try to find any published vulnerabilites, if they exist. The results of all preceding activity will then be documented into a JSON script and gives said script back to the user.
 
@@ -27,11 +27,11 @@ To run the program, run the following command:
 
     $ python riskAnalysis.py <URL_of_GitHub_Repository>
     
-* \<URL_of_GitHub_Repository\> - The URL of the main page for a GitHub repository (ex. For this repo, Repos-Health-Study, the URL would be "https://github.com/Dreizan/Repos-Health-Study".)
+\<URL_of_GitHub_Repository\> - The URL of the main page for a GitHub repository (ex. For this repo, Repos-Health-Study, the URL would be "https://github.com/Dreizan/Repos-Health-Study".)
 
     $ python riskAnalysis.py https://github.com/Dreizan/Repos-Health-Study
     
-This will find the passed repository link's associated zip file (assuming the URL of the repository exists), download the file, and decompress it. Then, scancode_toolkit will be executed, creating a JSON file containing licensing and copyright information on every file contained in the ********
+This will find the passed repository link's associated zip file (assuming the URL of the repository exists), download the file, and decompress it. Then, scancode_toolkit will be executed, creating a JSON file containing licensing and copyright information on every file contained in the target zip file. riskAnalysis.py will then look at the JSON file and parse out any licenses or copyrights found in the repository's files and output them out onto the console. Finally, the zip file and decompressed directory will be deleted from your system.
 
 # Copyright Declarations/Licensing Information
 Repos-Health-Study is free software: you can redistribute it and/or modify it under the terms of the MIT License as published by the Open Source Initiative. See the file LICENSE for more details.
