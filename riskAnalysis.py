@@ -14,10 +14,11 @@ def checkLicensing(targetZip, zipDir):
 	os.system("./scancode-toolkit-1.6.0/scancode -f json -l -c " + zipDir + " > ./test/results" + zipName + ".json")
 
 	print("Finsihed scanning. Parsing through JSON results now:")
+	print("./test/results" + zipName + ".json")
 
 	# Read through JSON data
 	with open("./test/results" + zipName + '.json') as data_file:    
-    	data = json.load(data_file)
+    		data = json.load(data_file)
 
 	# pprint(data)
 
