@@ -68,7 +68,7 @@ Mac Computer Specs: 64-bit macOS Sierra, 2.5 GHz Intel Core i5 processor, 16GB R
 When a contributor wishes to edit/add to the repository's code, contributors will fork the repository. Once code has been written, before committing, the maintainers will meet to go over additions/changes. Then, pull and merge requests will be made.
 
 # DFD of Repos-Health-Study
-![alt tag](https://github.com/Dreizan/Repos-Health-Study/blob/dev/RepoHealthDFD.PNG?raw=true)
+![alt tag](https://github.com/Dreizan/Repos-Health-Study/blob/master/RepoHealthDFD.PNG?raw=true)
 
 # Database Schema
 Eventually, once the program has collected the analyzed target repository's JSON file, we would like to store this data into a MongoDB sever. This way, we can pre-check, when the program starts, if the target repository has already been looked at by our program. If it does, we can decrease licensing/copyrights lookup time by referencing the MongoDB server.
