@@ -28,10 +28,29 @@ To run the program, run the following command:
     $ python riskAnalysis.py <URL_of_GitHub_Repository>
     
 \<URL_of_GitHub_Repository\> - The URL of the main page for a GitHub repository (ex. For this repo, Repos-Health-Study, the URL would be "https://github.com/Dreizan/Repos-Health-Study".)
-
-    $ python riskAnalysis.py https://github.com/Dreizan/Repos-Health-Study
     
 This will find the passed repository link's associated zip file (assuming the URL of the repository exists), download the file, and decompress it. Then, scancode_toolkit will be executed, creating a JSON file containing licensing and copyright information on every file contained in the target zip file. riskAnalysis.py will then look at the JSON file and parse out any licenses or copyrights found in the repository's files and output them out onto the console. Finally, the zip file and decompressed directory will be deleted from your system.
+
+    $ python riskAnalysis.py https://github.com/Dreizan/Repos-Health-Study
+    Checking if the URL passed exists:
+    URL exists!
+    Gathering the zip file and decompressing it.
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+      0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+    100 31204  100 31204    0     0  44464      0 --:--:-- --:--:-- --:--:-- 94844
+    Attemptiing to collect licensing and copyright information on the following GitHub project - Repos-Health-Study.zi:
+    (This may take awhile, depending on how big the zip file is)
+
+    Finsihed scanning. Parsing through JSON results now:
+    There are licenses included!
+    Licenses:
+    * - MIT License
+    There are copyrights included!
+    Copyrights:
+    * - "Copyright (c) 2017 Dreizan Moore & Matthew Schuette"
+    Parsing complete. Removing downloaded files:
+    Process complete. Thank you!
 
 # Copyright Declarations/Licensing Information
 Repos-Health-Study is free software: you can redistribute it and/or modify it under the terms of the MIT License as published by the Open Source Initiative. See the file LICENSE for more details.
