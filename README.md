@@ -8,7 +8,7 @@ Python 2.7.x (Link to Python Language: https://www.python.org)
 
 Python Requests Module (sudo pip install requests or sudo easy_install requests)
 
-Pytest 3.0.x (For testing purposes)
+Pytest 3.0.x (For testing purposes, https://docs.pytest.org/en/latest/)
 
 # Installation Instructions
 **Step 1: Download this repository**
@@ -50,6 +50,10 @@ This will find the passed repository link's associated zip file (assuming the UR
     * - "Copyright (c) 2017 Dreizan Moore & Matthew Schuette"
     Parsing complete. Removing downloaded files:
     Process complete. Thank you!
+
+# Testing Usage
+
+After installing Pytest using the aforementioned link in the installation instructions, navigate to the main directory that holds test_riskAnalysis.py. Then run pytest test_riskAnalysis.py You should then see the test results output.
 
 # Copyright Declarations/Licensing Information
 Repos-Health-Study is free software: you can redistribute it and/or modify it under the terms of the MIT License as published by the Open Source Initiative. See the file LICENSE for more details.
