@@ -6,7 +6,9 @@ Repos-Health-Study looks into analyzing potential risk factors on a Github repos
 # System Requirements
 Python 2.7.x (Link to Python Language: https://www.python.org)
 
-Python Requests Module (sudo pip install requests or sudo easy_install requests)
+Pip (included in Python 2.7.9 & up, Link: https://pip.pypa.io/en/stable/installing/  ) (sudo may be needed for installations)
+
+Python Requests Module (http://docs.python-requests.org/en/master/user/install/) (sudo may be needed for installations)
 
 Pytest 3.0.x (For testing purposes, https://docs.pytest.org/en/latest/)
 
