@@ -5,6 +5,8 @@ Repos-Health-Study looks into analyzing potential risk factors on a Github repos
 
 # System Requirements
 Python 2.7.x (Link to Python Language: https://www.python.org)
+Python Requests Module, Link shows ways to install (http://stackoverflow.com/questions/17309288/importerror-no-module-named-requests)
+Pytest 3.0.x (For testing purposes)
 
 # Installation Instructions
 **Step 1: Download this repository**
