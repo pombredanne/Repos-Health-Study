@@ -19,9 +19,6 @@ Either download and decompress the Repos-Health-Study zip file (Download Link: h
 
     $ git clone https://github.com/Dreizan/Repos-Health-Study.git
 
-**Step 2: Download the scancode_toolkit Repository**
-
-Download the scancode_toolkit Repository's zip file (Link: https://github.com/nexB/scancode-toolkit/archive/develop.zip) and decompress the zip file inside your Repos-Health-Study directory.
 
 # Usage
 To run the program, run the following command:
