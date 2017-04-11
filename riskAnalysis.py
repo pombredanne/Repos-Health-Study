@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+# Import required modules
 import sys, requests, zipfile, os, json
 
 # Function which looks for licensing
@@ -9,21 +9,22 @@ def checkLicensing(targetZip, zipDir, scanZipDir):
 	hasLicenses = 0
 	hasCopyrights = 0
 
+	#Change the permissions so scan code can be executed
 	os.system("chmod -R 755 " + scanZipDir)
 
 	# Run Scancode to gather licensing information
-	#os.system("./scancode-toolkit-develop/scancode -f json -l -c " + zipDir + " > ./test/results" + zipName + ".json")
 	os.system("./" + scanZipDir + "/scancode -f json -l -c " + zipDir + " > ./test/results" + zipName + ".json")
 
 	print("Finsihed scanning. Parsing through JSON results now:")
 	#print("./test/results" + zipName + ".json")
 
+	#Remove the first two lines of the JSON file as scancode places two statements that causes following code to break on first run
 	with open("./test/results" + zipName + '.json', 'r') as fin:
 			data = fin.read().splitlines(True)
 	with open("./test/results" + zipName + '.json', 'w') as fout:
 			fout.writelines(data[2:])
 
-	# Read through JSON data
+	# Read through JSON data and get the licenses and copyrights
 	with open("./test/results" + zipName + '.json') as data_file:    
     		data = json.load(data_file)
 
@@ -82,6 +83,7 @@ def unzipFile(targetZip):
 
 	return zipDir
 
+#Function that given the target URL gets the zip file
 def getZip(targetURL):
 	#Grab the zip of the user passed in URL
 	zipName = targetURL[targetURL.rfind('/')+1:]
