@@ -81,8 +81,7 @@ When a contributor wishes to edit/add to the repository's code, contributors wil
 # DFD of Repos-Health-Study
 ![alt tag](https://github.com/Dreizan/Repos-Health-Study/blob/master/RepoHealthDFD.PNG?raw=true)
 
-# Database Schema
-Eventually, once the program has collected the analyzed target repository's JSON file, we would like to store this data into a MongoDB sever. This way, we can pre-check, when the program starts, if the target repository has already been looked at by our program. If it does, we can decrease licensing/copyrights lookup time by referencing the MongoDB server.
+
 
 # To-Do's
 
