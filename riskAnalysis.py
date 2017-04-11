@@ -3,23 +3,31 @@
 import sys, requests, zipfile, os, json
 
 # Function which looks for licensing
-def checkLicensing(targetZip, zipDir):
+def checkLicensing(targetZip, zipDir, scanZipDir):
 	# Gather zip name
 	zipName = targetZip[targetZip.rfind('/'):]
 	hasLicenses = 0
 	hasCopyrights = 0
 
+	os.system("chmod -R 755 " + scanZipDir)
+
 	# Run Scancode to gather licensing information
-	os.system("./scancode-toolkit-1.6.0/scancode -f json -l -c " + zipDir + " > ./test/results" + zipName + ".json")
+	#os.system("./scancode-toolkit-develop/scancode -f json -l -c " + zipDir + " > ./test/results" + zipName + ".json")
+	os.system("./" + scanZipDir + "/scancode -f json -l -c " + zipDir + " > ./test/results" + zipName + ".json")
 
 	print("Finsihed scanning. Parsing through JSON results now:")
-	print("./test/results" + zipName + ".json")
+	#print("./test/results" + zipName + ".json")
+
+	with open("./test/results" + zipName + '.json', 'r') as fin:
+			data = fin.read().splitlines(True)
+	with open("./test/results" + zipName + '.json', 'w') as fout:
+			fout.writelines(data[2:])
 
 	# Read through JSON data
 	with open("./test/results" + zipName + '.json') as data_file:    
     		data = json.load(data_file)
 
-	for item in data['results']:
+	for item in data['files']:
 		if(len(item['licenses']) > 0):
 			if(hasLicenses == 0):
 				print("There are licenses included!\nLicenses:")
@@ -30,7 +38,7 @@ def checkLicensing(targetZip, zipDir):
 	if(hasLicenses == 0):
     		print("No licensing included.\n")
 
-   	for item in data['results']:
+   	for item in data['files']:
 		if(len(item['copyrights']) > 0):
 			if(hasCopyrights == 0):
 				print("There are copyrights included!\nCopyrights:")
@@ -44,7 +52,7 @@ def checkLicensing(targetZip, zipDir):
 
 	print("Parsing complete. Removing downloaded files:")
    	os.system("rm -rf " + zipDir)
-    
+    os.system("rm -rf " + scanZipDir)
 
 # Function that checks if the passed repository URL exists
 def checkURL(targetURL):
@@ -66,12 +74,13 @@ def unzipFile(targetZip):
 	
 	# Extract contents of the zip file
 	theZip = zipfile.ZipFile(targetZip, 'r')
-	theZip.extractall(zipDirectory)
+	theZip.extractall()
+	zipDir = (theZip.namelist())[0]
 	theZip.close()
 
    	os.system("rm -rf " + targetZip)
 
-	return(targetZip[:-1])
+	return zipDir
 
 def getZip(targetURL):
 	#Grab the zip of the user passed in URL
@@ -87,8 +96,18 @@ def getApiUrl(targetURL):
 	apiUrl = "https://api.github.com/repos/" + urlPieces[3] + '/' + urlPieces[4]
 	return(apiUrl)
 
+#Function that downloads the latest version of scan code
+def getScanCode():
+	scancodeURL = getApiUrl("https://github.com/nexB/scancode-toolkit")
+	scanZipFile = getZip(scancodeURL)
+	scanZipDir = unzipFile(scanZipFile)
+	return scanZipDir
+
 # Main
 def main():
+	print("Downloading ScanCode")
+	scanZipDir = getScanCode()
+
 	print("Checking if the URL passed exists:")
 	checkURL(sys.argv[1])
 	properURL = getApiUrl(sys.argv[1])
@@ -97,9 +116,9 @@ def main():
 	zipF = getZip(properURL)
 	zipDir = unzipFile(zipF)
 
-	print("Attemptiing to collect licensing and copyright information on the following GitHub project - " + zipDir + ":")
-	print("(This may take awhile, depending on how big the zip file is)\n")
-	checkLicensing(sys.argv[1], zipDir)
+	print("Attempting to collect licensing and copyright information on the following GitHub project - " + zipDir + ":")
+	print("(This may take a while, depending on how big the zip file is)\n")
+	checkLicensing(sys.argv[1], zipDir, scanZipDir)
 
 	print("Process complete. Thank you!")
 
