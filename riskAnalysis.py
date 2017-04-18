@@ -8,6 +8,9 @@ def checkLicensing(targetZip, zipDir, scanZipDir):
 	zipName = targetZip[targetZip.rfind('/'):]
 	hasLicenses = 0
 	hasCopyrights = 0
+	listLicenses = []
+	listCopyrights = []
+	exists = False
 
 	#Change the permissions so scan code can be executed
 	os.system("chmod -R 755 " + scanZipDir)
@@ -28,17 +31,26 @@ def checkLicensing(targetZip, zipDir, scanZipDir):
 	with open("./test/results" + zipName + '.json') as data_file:    
     		data = json.load(data_file)
 
+    # Parse through licenses in the repo
 	for item in data['files']:
 		if(len(item['licenses']) > 0):
 			if(hasLicenses == 0):
 				print("There are licenses included!\nLicenses:")
 			hasLicenses = 1
 			for licns in item['licenses']:
-   				print("* - " + licns['short_name'])
+				exists = False
+				for currLic in listLicenses:
+					if(currLic.split(' ') == licns['short_name'].split(' ')):
+						exists = True
+				if(not exists):
+   					listLicenses.append(licns['short_name'])
+   					print("* - " + licns['short_name'])
 
+   	# If no licenses, says so
 	if(hasLicenses == 0):
     		print("No licensing included.\n")
 
+	# Parse through copyrights in the repo
    	for item in data['files']:
 		if(len(item['copyrights']) > 0):
 			if(hasCopyrights == 0):
@@ -46,14 +58,25 @@ def checkLicensing(targetZip, zipDir, scanZipDir):
 			hasCopyrights = 1
 			for cpy in item['copyrights']:
 				for stmts in cpy['statements']:
-   					print("* - \"" + stmts + "\"")
+   					exists = False
+					for currCop in listCopyrights:
+						if(currCop.split(' ') == stmts.split(' ')):
+							exists = True
+					if(not exists):
+   						listCopyrights.append(stmts)
+   						print("* - " + stmts)
 
+   	# If no copyrights, says so
 	if(hasCopyrights == 0):
    		print("No copyrights included.\n")
 
+   	# Reformats the output json file with new lines
+   	with open("./test/results" + zipName + '.json', 'w') as outfile:
+    		json.dump(data, outfile, indent=2)
+
 	print("Parsing complete. Removing downloaded files:")
    	os.system("rm -rf " + zipDir)
-    os.system("rm -rf " + scanZipDir)
+    	os.system("rm -rf " + scanZipDir)
 
 # Function that checks if the passed repository URL exists
 def checkURL(targetURL):
@@ -87,7 +110,7 @@ def unzipFile(targetZip):
 def getZip(targetURL):
 	#Grab the zip of the user passed in URL
 	zipName = targetURL[targetURL.rfind('/')+1:]
-	print(zipName + ".zip")
+	#print(zipName + ".zip")
 	os.system("curl -L " + targetURL + "/zipball > " + zipName + ".zip")
 	os.system("")
 	return(zipName + ".zip")
@@ -118,7 +141,7 @@ def main():
 	zipF = getZip(properURL)
 	zipDir = unzipFile(zipF)
 
-	print("Attempting to collect licensing and copyright information on the following GitHub project - " + zipDir + ":")
+	print("Attempting to collect licensing and copyright information on the following GitHub project - " + zipF + ":")
 	print("(This may take a while, depending on how big the zip file is)\n")
 	checkLicensing(sys.argv[1], zipDir, scanZipDir)
 
