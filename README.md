@@ -51,7 +51,6 @@ This will find the passed repository link's associated zip file (assuming the UR
     Process complete. Thank you!
 
 # Testing Usage
-
 After installing Pytest using the aforementioned link in the installation instructions, navigate to the main directory that holds test_riskAnalysis.py. Then run the command:
 
     $ pytest test_riskAnalysis.py 
@@ -81,12 +80,9 @@ When a contributor wishes to edit/add to the repository's code, contributors wil
 # DFD of Repos-Health-Study
 ![alt tag](https://github.com/Dreizan/Repos-Health-Study/blob/master/RepoHealthDFD.PNG?raw=true)
 
-
-
-# To-Do's
-
+# Future Development Tasks
 * Implementing DoSOCSv2 as our licensing information ananlyzer (Link: "https://github.com/DoSOCSv2/DoSOCSv2/blob/master/README.md") as well as giving us a SHA-1 value on the repository. We would use the SHA-1 value to search the NIST Database (Link: "https://www.nist.gov") for existing CPEs on the target repository.
-* Implementing MongoDB server as mentioned above
+* Implementing MongoDB server 
 * Have program store JSON licensing/copyright and CPE data into the MongoDB server
 
 # Use Case
