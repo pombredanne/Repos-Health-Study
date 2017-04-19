@@ -10,7 +10,7 @@ Pip (included in Python 2.7.9 & up, Link: https://pip.pypa.io/en/stable/installi
 
 Python Requests Module (http://docs.python-requests.org/en/master/user/install/) (sudo may be needed for installations)
 
-Pytest 3.0.x (For testing purposes, https://docs.pytest.org/en/latest/)
+Pytest 3.0.x (For testing purposes, https://docs.pytest.org/en/latest/getting-started.html)
 
 # Installation Instructions
 **Step 1: Download this repository**
