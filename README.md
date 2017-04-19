@@ -12,6 +12,8 @@ Python Requests Module (http://docs.python-requests.org/en/master/user/install/)
 
 Pytest 3.0.x (For testing purposes, https://docs.pytest.org/en/latest/getting-started.html)
 
+Curl (If not already installed) (https://curl.haxx.se/download.html) (sudo may be needed for installations)
+
 # Installation Instructions
 **Step 1: Download this repository**
 
