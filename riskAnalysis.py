@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# SPDX-License-Identifier: MIT
 # Import required modules
 import sys, requests, zipfile, os, json
 
