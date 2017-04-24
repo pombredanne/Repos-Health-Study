@@ -18,7 +18,7 @@ def checkLicensing(targetZip, zipDir, scanZipDir):
 	# Run Scancode to gather licensing information
 	os.system("./" + scanZipDir + "/scancode -f json -l -c " + zipDir + " > ./test/results" + zipName + ".json")
 
-	print("Finsihed scanning. Parsing through JSON results now:")
+	print("Finished scanning. Parsing through JSON results now:")
 	#print("./test/results" + zipName + ".json")
 
 	#Remove the first two lines of the JSON file as scancode places two statements that causes following code to break on first run
